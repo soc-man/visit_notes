@@ -1,6 +1,16 @@
-<h1> <%= @note.title %> </h1>
-<p> <%= @note.body %> </p>
-
-<%= link_to 'Back', root_path %>
-<%= link_to 'Edit', edit_note_path(@note) %>
-<%= link_to 'Delete', @note, method: :delete, form: { data: { confirm: 'Are you sure?' } }, :class => 'btn btn-danger' %>
+<div class = "container">
+  <h1 class = "text-center"> <%= @note.title %> </h1>
+  <p> <%= @note.body %> </p>
+   
+  <div class = "row">
+    <div class = "col-sm-4">
+      <%= link_to 'Back', root_path %>
+    </div>
+    <div class = "col-sm-4">
+      <%= link_to 'Edit', edit_note_path(@note) %>
+    </div>
+    <div class = "col-sm-4">
+      <%= link_to 'Delete', @note, method: :delete, form: { data: { confirm: 'Are you sure?' } }, :class => 'btn btn-danger' %>
+    </div>
+  </div>
+</div>

@@ -1,10 +1,10 @@
-<div> 
-  <h1> Visit Notes </h1> 
+<div class = "container"> 
+  <h1 class = "text-center"> Visit Notes </h1> 
   <h2> <%= link_to 'Add note', new_note_path, :class => 'btn btn-primary' %> </h2> 
-</div> 
+ 
+  <br>
 
-<br>
-
-<% @notes.each do | n | %>
-  <h2> <%=  link_to n.title , note_path(n)  %> </h2>  <br>
-<% end %>
+  <% @notes.each do | n | %>
+    <h2> <%=  link_to n.title , note_path(n)  %> </h2>  <br>
+  <% end %>
+</div>
