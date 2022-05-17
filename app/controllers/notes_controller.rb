@@ -1,6 +1,6 @@
 class NotesController < ApplicationController
     def index
-      @note = Note.all
+      @notes = Note.all.order("created_at DESC")
     end
 
     def show
@@ -18,6 +18,19 @@ class NotesController < ApplicationController
       else
         render 'new'
       end 
+    end
+
+    def edit
+        @note = Note.find(params[:id])
+    end
+
+    def update
+        @note = Note.find(params[:id])
+        if @note.update(note_params)
+            redirect_to @note
+          else
+            render 'edit'
+        end
     end
 
     private 
