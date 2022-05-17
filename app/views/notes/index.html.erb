@@ -1,0 +1,4 @@
+<h1> Visit Notes </h1>
+<% @note.each do | n | %>
+  <%= link_to n.title, note_path(n)%> <br>
+<% end %> 
